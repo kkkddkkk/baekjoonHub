@@ -20,19 +20,23 @@ class Solution {
             //3, 3, 1, 1, 2, 2, 4, 4, 5, 5
             if(answers[i] == forThird[(i/2)%5]) third++;
         }
-        if(Math.max(first, second)==first && Math.max(first, third)==first){
-            temp.add(1);
-            if(first==second) temp.add(2);
-            if(first==third) temp.add(3);
-        }else if(Math.max(third, second)==third && Math.max(first, third)==third){
-            temp.add(3);
-            if(third==second) temp.add(2);
-            if(first==third) temp.add(1);
-        }else if(Math.max(first, second)==second && Math.max(second, third)==second){
-            temp.add(2);
-            if(third==second) temp.add(3);
-            if(first==second) temp.add(1);
-        }
+        int max = Math.max(first, Math.max(second, third));
+        if(first==max) temp.add(1);
+        if(second==max) temp.add(2);
+        if(third==max) temp.add(3);
+        // if(Math.max(first, second)==first && Math.max(first, third)==first){
+        //     temp.add(1);
+        //     if(first==second) temp.add(2);
+        //     if(first==third) temp.add(3);
+        // }else if(Math.max(third, second)==third && Math.max(first, third)==third){
+        //     temp.add(3);
+        //     if(third==second) temp.add(2);
+        //     if(first==third) temp.add(1);
+        // }else if(Math.max(first, second)==second && Math.max(second, third)==second){
+        //     temp.add(2);
+        //     if(third==second) temp.add(3);
+        //     if(first==second) temp.add(1);
+        // }
         answer= new int[temp.size()];
         for(int i=0;i<temp.size();i++){
             answer[i] = temp.get(i);
