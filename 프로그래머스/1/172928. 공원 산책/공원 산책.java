@@ -5,14 +5,13 @@ class Solution {
         int[] answer = {};
         //park -> O는 길, X는 장애물, S는 시작지점
         //routes -> E(ast), W(est), N(orth), S(outh) , + n칸 이동
-        int[] start = new int[2];
+        answer = new int[2];
         for(int i=0;i<park.length;i++){
             if(!park[i].contains("S")) continue;
-            start[0] = i;
-            start[1] = park[i].indexOf("S");
+            answer[0] = i;
+            answer[1] = park[i].indexOf("S");
             break;
         }
-        answer = start.clone();
 
         for(String s:routes){
             String direction = s.split(" ")[0];
