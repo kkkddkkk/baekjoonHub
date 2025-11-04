@@ -6,7 +6,7 @@ class Solution {
         //op_end: 오프닝 끝나는 시간
         //pos가 오프닝 중이면 자동으로 op_end로 이동
         //commands: prev=10초 전으로 이동(10초 미만일 경우 0분 0초로 이동), next= 10초 후로 이동(10초 미만으로 남았을 경우 video_len으로 이동)
-        //pos: 현제 위치
+        //pos: 현재 위치
         int now = Integer.parseInt(pos.split(":")[0])*60+
             Integer.parseInt(pos.split(":")[1]);
         int openStartTime = Integer.parseInt(op_start.split(":")[0])*60+
