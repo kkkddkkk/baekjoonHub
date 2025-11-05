@@ -15,7 +15,7 @@ class Solution {
     //재귀함수로 줄세우기
     public int line(String[] friends, Map<String, Integer> idx, int start, String[] data){
         if(start==friends.length-1){
-            return check(data, idx, friends.length-1)?1:0;
+            return check(data, idx, start)?1:0;
         }
         int answer = 0;
         for(int i=start;i<friends.length;i++){
